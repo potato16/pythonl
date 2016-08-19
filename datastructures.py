@@ -29,6 +29,22 @@ elif(sys.argv[1]=='1'):
 	print('Last animal person brought from old world is', new_person[2])
 	print('Number of animals person in the new world is',
 			len(new_person)-1+len(new_person[2]))
+elif(sys.argv[1]=='2'):
+	#Dictionary
+	tudien={
+		'po':'Popo or bobo is meaning idiot',
+		'tada':' goodbye ',
+		'xinchao':'hello'
+		}
+	print("po have meaning is ",tudien['po'])
+	#Deleting a key-value pair
+	del tudien['tada']
+	print('\nThere are {} word in the book\n'.format(len(tudien)))
+	for tu, nghia in tudien.items():
+		print('{} mean {}'.format(tu,nghia))
+	tudien['Ngoc'] ='dump'
+	if 'Ngoc' in tudien:
+		print('Ngoc mean ',tudien['Ngoc'])
 else:
 	print('Sorry, your command is "{}"  not here,go try something else. Bye'
 			.format(sys.argv[1]))
