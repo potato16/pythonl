@@ -45,6 +45,18 @@ elif(sys.argv[1]=='2'):
 	tudien['Ngoc'] ='dump'
 	if 'Ngoc' in tudien:
 		print('Ngoc mean ',tudien['Ngoc'])
+elif(sys.argv[1]=='3'):
+	print('#Sequence')
+	dancuu=['con1','cuu2','andy','suuzy']
+	name = 'lucy'
+	print('Con so 0 la',dancuu[0])
+	print('Con so 1 la',dancuu[1])
+	print('Con so 2 la',dancuu[2])
+	print('Con so 3 la',dancuu[3])
+	print('Con so -1 la', dancuu[-1])
+	print('Con so -2 la', dancuu[-2])
+	print('Chu dau tien la', name[0])
+
 else:
 	print('Sorry, your command is "{}"  not here,go try something else. Bye'
 			.format(sys.argv[1]))
