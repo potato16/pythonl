@@ -1,0 +1,4 @@
+with open("poe.txt") as f:
+	for line in f:
+		print(line,end='')
+print('Ok it is bad')
