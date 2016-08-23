@@ -17,24 +17,30 @@ logging.basicConfig(
 	
 )
 f = open('bodyguard.txt')
-tracer = {
-	0:True,
-	1:True,
-	2:True,
-	3:False,
-	4:True,
-	5:True,
-	6:True,
-	7:False
-}
+#tracer = {
+#	0:'u',
+#	1:'u',
+#	2:'u',
+#	3:'l',
+#	4:'u',
+#	5:'u',
+#	6:'u',
+#	7:'l'
+#}
 process=0
 target =''
+#oreka=False
+tracer=[]
 def processcont(char):
 	global process 
+#	global oreka
 	process +=1
 	global target
 	target += char
-#	logging.debug("{}-{}-{}".format(target,process,char))
+	if len(target)==7:
+		tracer.append(target)
+		#oreka=True
+	logging.debug("{}-{}-{}".format(target,process,char))
 def processreset():
 	global process
 	process= 0
@@ -44,26 +50,28 @@ while True:
 	line = f.readline()
 	if len(line)==0:
 		break
-	if process==8:
-		break
+#	if oreka:
+#		print("O re Ka")
+#		break
 #	pv = tracer[process]
 	for char in line:
 		#print(tracer[process])
 		if char.islower():
 	#		logging.debug(char)
-			if tracer[process]:
+			if process%4==3:
 				print('Kaka')
 				processcont(char)
 			else :
 				processreset()
 			
 		elif char.isupper():
-			logging.debug(char)
-			if tracer[process]:
-				print("Keke")
-				processcont(char)
-			else :
+			#logging.debug(char)
+			if process%4==3:
+				#print("Keke")
 				processreset()
+			else :
+				processcont(char)
 f.close()
-print("Found it or not: ",target)	
+print("Found it or not: ",tracer)
+print("Total numbers of little guys: ",len(tracer))
 
