@@ -1,4 +1,5 @@
-''' Find the little guy surrounded by EXACTLY three big bodyguards on each of its sides'''
+''' http://www.pythonchallenge.com/ 
+Find the little guy surrounded by EXACTLY three big bodyguards on each of its sides'''
 import os
 import platform
 import logging
