@@ -73,5 +73,8 @@ while True:
 				processcont(char)
 f.close()
 print("Found it or not: ",tracer)
+f = open('tracer.txt','w')
+f.write(''.join(tracer))
+f.close()
 print("Total numbers of little guys: ",len(tracer))
 
