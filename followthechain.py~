@@ -1,0 +1,16 @@
+"""Follow the chain , pythonchangllenge.com  shitty,
+What is chain, where, how, aaaaaa"""
+import urllib.request
+i =1
+uri='http://www.pythonchallenge.com/pc/def/linkedlist.php'
+nothing =b'12345'
+while i<=400:
+#if True:
+	
+	fulluri=uri+"?nothing="+nothing.decode("utf-8")
+	response = urllib.request.urlopen(fulluri)
+	html = response.read()
+	nothing=html[-5:]
+	i+=1
+	print(nothing)
+

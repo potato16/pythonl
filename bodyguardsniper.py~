@@ -1,5 +1,5 @@
-''' http://www.pythonchallenge.com/ 
-Find the little guy surrounded by EXACTLY three big bodyguards on each of its sides'''
+""" http://www.pythonchallenge.com/ 
+Find the little guy surrounded by EXACTLY three big bodyguards on each of its sides"""
 import os
 import platform
 import logging
@@ -59,7 +59,7 @@ while True:
 		#print(tracer[process])
 		if char.islower():
 	#		logging.debug(char)
-			if process%4==3:
+			if process%5==4:
 				print('Kaka')
 				processcont(char)
 			else :
@@ -67,7 +67,7 @@ while True:
 			
 		elif char.isupper():
 			#logging.debug(char)
-			if process%4==3:
+			if process%5==3:
 				#print("Keke")
 				processreset()
 			else :
