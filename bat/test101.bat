@@ -5,17 +5,17 @@ echo ========Melt Down This Computer===========>>%COMPUTERNAME%/infocollect.txt
 echo ==========================================>>%COMPUTERNAME%/infocollect.txt
 echo ====== Thing cant get pass=====>>%COMPUTERNAME%/infocollect.txt
 echo ===============================>>%COMPUTERNAME%/infocollect.txt
-echo Factory>>%COMPUTERNAME%/infocollect.txt
-echo Department>>%COMPUTERNAME%/infocollect.txt
-echo WAN IP Address>>%COMPUTERNAME%/infocollect.txt
-echo WAN MAC Address>>%COMPUTERNAME%/infocollect.txt
-echo User>>%COMPUTERNAME%/infocollect.txt
-echo Hardware SN>>%COMPUTERNAME%/infocollect.txt
-echo Office Version>>%COMPUTERNAME%/infocollect.txt
-echo Office No.>>%COMPUTERNAME%/infocollect.txt
-echo Anti Virus software>>%COMPUTERNAME%/infocollect.txt
-echo Anti Virus software No.>>%COMPUTERNAME%/infocollect.txt
-echo Antivirus software expired date>>%COMPUTERNAME%/infocollect.txt
+echo Factory:     >>%COMPUTERNAME%/infocollect.txt
+echo Department:  >>%COMPUTERNAME%/infocollect.txt
+echo WAN IP Address:  >>%COMPUTERNAME%/infocollect.txt
+echo WAN MAC Address: >>%COMPUTERNAME%/infocollect.txt
+echo User:            >>%COMPUTERNAME%/infocollect.txt
+echo Hardware SN:     >>%COMPUTERNAME%/infocollect.txt
+echo Office Version:  >>%COMPUTERNAME%/infocollect.txt
+echo Office No.:      >>%COMPUTERNAME%/infocollect.txt
+echo Anti Virus software:     >>%COMPUTERNAME%/infocollect.txt
+echo Anti Virus software No.:  >>%COMPUTERNAME%/infocollect.txt
+echo Antivirus software expired date:  >>%COMPUTERNAME%/infocollect.txt
 echo ========Thing we can get it free =========>>%COMPUTERNAME%/infocollect.txt
 echo ==========================================>>%COMPUTERNAME%/infocollect.txt
 echo Checking your system info. Please wait...
