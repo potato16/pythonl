@@ -1,17 +1,35 @@
 """Follow the chain , pythonchangllenge.com  shitty,
 What is chain, where, how, aaaaaa"""
+import logging
 import urllib.request
+logging.basicConfig(filename="chaintracer.log",
+		level=logging.DEBUG,
+		filemode='w')
+print("Creating log file at: ",logging)
 i =1
 uri='http://www.pythonchallenge.com/pc/def/linkedlist.php'
 nothing ='12345'
-while i<=400:
+while True:
 #if True:
+	print("FUll RETARD",i)
 	
 	fulluri=uri+"?nothing="+nothing
-	response = urllib.request.urlopen(fulluri)
-	html = response.read()
-	nothing=html[-5:].decode()
-	
+	nothing=''
+	while True:
+		try:
+			response = urllib.request.urlopen(fulluri)
+			break
+		except:
+			print("Failed. Try again")
+	html = response.read().decode()
+	logging.debug(html)
+	logging.debug(i)
+	for char in html:
+		if char.isnumeric():
+			nothing +=char
+	#nothing=html[-5:].decode()
+	if nothing=='':
+		print('Maybe this is the answer: ',html)
 	i+=1
 	print(nothing)
 
