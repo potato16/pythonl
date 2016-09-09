@@ -1,0 +1,12 @@
+def sumofnum(n):
+	n = str(n)
+	s=0
+	for i in n:
+		s+=int(i)**5
+	return s
+i=2
+while True:
+	tmp = sumofnum(i)
+	if tmp == i:
+		print (i)
+	i +=1
