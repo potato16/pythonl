@@ -1,9 +1,0 @@
-f1 =1
-f2 =1
-while True:
-	tmp = f2
-	f2 = tmp +f1
-	f1 = tmp
-	if len(str(f2))==1000:
-		break
-print(f2)
