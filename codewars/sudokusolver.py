@@ -1,4 +1,4 @@
-#from poenpyxl import load_workbook
+from openpyxl import Workbook
 def sudoku(puzzle):
     """return the solved puzzle as a 2d array of 9x9"""
     for x in range(9):
@@ -30,9 +30,11 @@ def sudoku(puzzle):
                 puzzle[x][y]=tmp
     
     #check alone number then apply it, ez life
+    _count =0
     _flag = True
     while _flag:
         _flag=False
+        
         for x in range(9):
             for y in range(9):
                 #check alone number
@@ -71,16 +73,30 @@ def sudoku(puzzle):
                             if puzzle[i][y] in puzzle[x][y]:
                                 _flag=True
                                 puzzle[x][y].remove(puzzle[i][y])
-    
+                #check again. Anything is clear
+                
+                if not  _flag:
+                    _count+=1
+    print(_count)                
     return puzzle
-puzzle = [[5,3,0,0,7,0,0,0,0],
-          [6,0,0,1,9,5,0,0,0],
-          [0,9,8,0,0,0,0,6,0],
-          [8,0,0,0,6,0,0,0,3],
-          [4,0,0,8,0,3,0,0,1],
-          [7,0,0,0,2,0,0,0,6],
-          [0,6,0,0,0,0,2,8,0],
-          [0,0,0,4,1,9,0,0,5],
-          [0,0,0,0,8,0,0,7,9]]
+puzzle =[[9, 0, 0, 0, 8, 0, 0, 0, 1],
+ [0, 0, 0, 4, 0, 6, 0, 0, 0],
+ [0, 0, 5, 0, 7, 0, 3, 0, 0],
+ [0, 6, 0, 0, 0, 0, 0, 4, 0],
+ [4, 0, 1, 0, 6, 0, 5, 0, 8],
+ [0, 9, 0, 0, 0, 0, 0, 2, 0],
+ [0, 0, 7, 0, 3, 0, 2, 0, 0],
+ [0, 0, 0, 7, 0, 5, 0, 0, 0],
+ [1, 0, 0, 0, 4, 0, 0, 0, 7]] 
 #print(puzzle[1][3])
 print(sudoku(puzzle))
+#print to excel file
+wb = Workbook()
+ws = wb.active
+for x in range(9):
+    for y in range(9):
+        if type(puzzle[x][y]) is list:
+            ws.cell(row=x+1, column = y+1, value = ''.join(str(i) for i in puzzle[x][y]))
+        else:
+            ws.cell(row=x+1, column = y+1,value= puzzle[x][y])
+wb.save("sudoku.xlsx")
