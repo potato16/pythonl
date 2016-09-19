@@ -68,7 +68,9 @@ class Example(QWidget):
         grid.addWidget(self.lblcal,8,1)
         
         self.setLayout(grid)
-        self.setGeometry(300, 300, 250, 150)
+
+        self.showMaximized()
+        #self.setGeometry(300, 300, 250, 150)
         self.setWindowTitle('QCheckBox')
         self.show()
     def showDate(self, date):
